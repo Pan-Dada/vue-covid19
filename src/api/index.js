@@ -28,6 +28,9 @@ const api = {
     getWorldData() {
         return axios.get( base.worldData)
     },
+    getGlobalData(){
+        return axios.get( base.globalData)
+    },
     /**
      * 获取城市接口
      * 参数：format=json&appid=6938&city_name=城市名称&sign=md5加密字符串 
