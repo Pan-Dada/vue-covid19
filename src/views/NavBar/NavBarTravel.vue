@@ -1,7 +1,8 @@
 <template >
     <div class="nav" >
         <van-nav-bar class="my-navbar"
-            title="国内疫情数据"
+            title="防疫出行政策"
+            left-arrow
             @click-left="onClickLeft"
             fixed
         />  
@@ -24,11 +25,10 @@ export default {
 .nav{
     margin-bottom: 40px;  
 }
-
 .my-navbar{
     
     border-bottom: 0.7px solid rgb(5, 63, 139) ;
-    background: rgba(6, 130, 231, 0.87);
+    background: rgba(27, 160, 82, 0.87);
     height: 40px;
     --van-nav-bar-title-font-size:18px;
     --van-nav-bar-title-text-color:white;

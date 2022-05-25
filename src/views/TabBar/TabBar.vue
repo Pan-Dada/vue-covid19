@@ -10,7 +10,7 @@
 
         <van-tabbar-item name="worldwide" @click="$router.push('/worldwide')">
           <div class="icon"><van-icon name="worldwide" class="iconfont icon-wangluo" /></div>
-          <div>海外</div>
+          <div>全球</div>
         </van-tabbar-item>
         
         <van-tabbar-item name="measures" @click="$router.push('/measures')">

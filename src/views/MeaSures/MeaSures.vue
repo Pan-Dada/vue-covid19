@@ -3,7 +3,7 @@
         <!-- 组件1 顶部栏 -->
         <navbar-mea/>  
         <img src="../../assets/image/Mea.png" alt="" class="img" >
-        <div class="title" >疫情防控措施</div>
+        <div class="title" ><h3>疫情防控措施</h3></div>
         
         <!-- 组件  卡 片 -->
         <mea-info/>

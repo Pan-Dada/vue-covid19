@@ -1,6 +1,6 @@
 <template>
   <div class="SwipeContainer" >
-      <van-swipe class="my-swipe" :autoplay="3000" :lazy-render="true" indicator-color="white">
+      <van-swipe class="my-swipe" :autoplay="2000" :lazy-render="true" indicator-color="white">
         <van-swipe-item><img class="img" src="../../assets/image/pic1.png" alt=""></van-swipe-item>
         <van-swipe-item><img class="img" src="../../assets/image/pic2.png" alt=""></van-swipe-item>
         <van-swipe-item><img class="img" src="../../assets/image/pic3.png" alt=""></van-swipe-item>

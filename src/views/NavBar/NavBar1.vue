@@ -1,10 +1,10 @@
 <template >
     <div class="nav" >
         <van-nav-bar class="my-navbar"
-            title="地区疫情数据"
-            left-text="返回"
+            title="地区疫情数据"          
             left-arrow
             @click-left="onClickLeft"
+            fixed
         />  
     </div> 
 
@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.nav{
+    margin-bottom: 40px;  
+}
 
 .my-navbar{
     

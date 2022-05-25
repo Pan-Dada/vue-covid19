@@ -1,16 +1,24 @@
 <template>
-    
-  <div class="protectGuide">
-      <nav-bar-good/>
+  <div class="goods">
+
     <div class="warp">
+      <div><nav-bar-good/></div>
       <div class="top-logo">
-        <img src="../../assets/image/measure03.png" alt="" />
+        <img src="../../assets/image/measure3.png" class="img" alt="" />
       </div>
-      <van-tabs sticky >
+      <div class="tabs">
+        <van-tabs sticky
+        type="card" 
+        swipeable 
+        background="white" 
+        color="green" 
+        border
+        title-active-color="white">
         <van-tab v-for="item in tabList" :title="item.title" :key="item.title">
           <img :src="item.img" alt="" class="my-img"/>
         </van-tab>
-      </van-tabs>
+      </van-tabs></div>
+      
     </div>
     <div class="foot">
       <button>抗疫物资购买</button>
@@ -44,13 +52,30 @@ export default {
     width: 100%;
 }
 
-.protectGuide {
+.goods {
+  
   height: 100vh;
   display: flex;
   flex-flow: column;
-  background-color: rgba(35, 173, 92, 0.87);
+  // background-color: rgba(18, 168, 111, 0.644);
+  background: white;
+
+  //主体
+  .tabs{
+    margin-top: 20px;
+    width: 88%;
+    margin-left: 4%;
+    padding: 2% 2% 2%;
+    border-radius: 0.3rem;
+    box-shadow: 0 5px 5px 5px rgba(102, 102, 102, 0.623);
+    margin-block: 0.5rem;
+
+  }
+
   .foot {
     text-align: center;
+    background: white;
+    
 
     // 购买按钮
     button {
@@ -63,47 +88,35 @@ export default {
       color: #fff;
     }
   }
+
   .warp {
+    
     position: relative;
     overflow-y: auto;
+    --van-tabs-card-height:40px;
+
     .top-logo {
-      img {
+      .img {
         width: 100%;
       }
     }
-
+    
+    
     .van-tabs {
       position: relative;
+      
       
       ::v-deep.van-tabs__line {
         background-color: transparent;
       }
-      ::v-deep.van-tabs__nav--line {
-        padding: 0 0.32rem;
-        background-color: rgba(42, 147, 233, 0.87);
-        .van-tab{
-          padding: 0;
-        }
-        .van-tab+.van-tab{
-          padding-left: 0.24rem;
-        }
-        
-        .van-tab__text {
-          background-color: rgba(42, 147, 233, 0.87);
-          color: #fff;
-          width: 100%;
-          text-align: center;
-          line-height: 0.48rem;
-          border-radius: 0.04rem;
-        }
-      }
-       ::v-deep .van-tab--active .van-tab__text {
-          background-color: #f78207;
-        }
+
        ::v-deep .van-tabs__content {
          padding: 0 0.32rem;
+         
+         
       }
       .van-tab__pane {
+        
         img {
           width: 100%;
         }

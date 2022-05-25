@@ -11,6 +11,7 @@
     
     <tab-bar/>
 
+    <!-- <domestic-info :covData="covData" /> -->
   </div>
   
 </template>
@@ -23,29 +24,55 @@ import NavBar0 from './NavBar/NavBar0.vue'
 // @ is an alias to /src
 import api from '../api/index'
 import TabBar from './TabBar/TabBar.vue'
+// import DomesticInfo from './DomesticInfo/DomesticInfo.vue'
 
 export default {
-  name: 'HomeView',      
+  name: 'HomeView',
+  
+  data() {
+    return {
+      covData: {}, //全国数据统计
+    };
+  },
+
   components: {
-    CovInfo,
-    SwipeContainer,
     NavBar0,
-    TabBar
+    SwipeContainer,
+    CovInfo,
+    TabBar,
+    // DomesticInfo
   },
   created(){
     //请求病毒接口
     //等价于axios.get(base.host+base.covInfo)
     api.getCovInfo().then((res) => {
-      console.log(res.data);
+      console.log(res.data.newslist[0]);
+      let data = res.data.newslist[0].desc;
+       //全国疫情的数据统计信息---
+      this.covData = {
+        currentConfirmedCount: data.currentConfirmedCount,
+        confirmedCount: data.confirmedCount,
+        suspectedCount: data.suspectedCount,
+        curedCount: data.curedCount,
+        deadCount: data.deadCount,
+        seriousCount: data.seriousCount,
+        suspectedIncr: data.suspectedIncr,
+        currentConfirmedIncr: data.currentConfirmedIncr,
+        confirmedIncr: data.confirmedIncr,
+        curedIncr: data.curedIncr,
+        deadIncr: data.deadIncr,
+        seriousIncr: data.seriousIncr,
+        modifyTime: data.modifyTime,
+      };
+
     })
-    
-    
+      
   }
 }
 </script>
 <style  scoped>
 .home{
-  background: rgba(76, 166, 240, 0.87);
+  background: rgba(112, 185, 245, 0.6);
 }
 
 
