@@ -36,6 +36,16 @@ const routes = [
     path: '/travelpolicy',
     name: 'travelpolicy',
     component: () => import('../views/TravelPolicy/TravelPolicy.vue')
+  },
+  {
+    path: '/vaccination',
+    name: 'vaccination',
+    component: () => import('../views/VacciNation/VacciNation.vue')
+  },
+  {
+    path: '/nucleicacidtest',
+    name: 'nucleicacidtest',
+    component: () => import('../views/NucleicAcidTest/NucleicAcidTest.vue')
   }
   
 ]
