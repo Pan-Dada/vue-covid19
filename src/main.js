@@ -11,10 +11,9 @@ import  '@/assets/css/base.css'
 import './assets/js/rem.js'
 
 // 引入vant
-import { Swipe, SwipeItem,Image as VanImage,NavBar,Tabbar, TabbarItem,ConfigProvider,Tab, Tabs, Popup,Picker,Loading,Toast} from 'vant'
+import { SubmitBar,Form,Stepper,DropdownMenu, DropdownItem,Rate,NoticeBar,ConfigProvider,Button,Search,Cascader,Swipe, SwipeItem,Image as VanImage,NavBar,Tabbar, TabbarItem,Tab, Tabs, Popup,Picker,Loading,Toast,Field, CellGroup,Card,Divider} from 'vant'
 
 // 引入iconfont.css样式
 import './assets/font/iconfont.css'
 
-
-createApp(App).use(store).use(router).use(Swipe).use(SwipeItem).use(VanImage).use(NavBar).use(Tabbar).use(TabbarItem).use(ConfigProvider).use(Tab).use(Tabs).use(Loading).use(Picker).use(Popup).use(Toast).mount('#app')
+createApp(App).use(store).use(Form).use(SubmitBar).use(Stepper).use(DropdownMenu).use(DropdownItem).use(Rate).use(NoticeBar).use(router).use(Swipe).use(SwipeItem).use(VanImage).use(NavBar).use(Tabbar).use(TabbarItem).use(Tab).use(Tabs).use(Loading).use(Picker).use(Popup).use(Toast).use(Cascader).use(Field).use(CellGroup).use(Search).use(Card).use(Button).use(Divider).use(ConfigProvider).mount('#app')
