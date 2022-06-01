@@ -25,9 +25,8 @@ export default {
     margin-bottom: 40px;  
 }
 .my-navbar{
-    border-bottom: 0.7px solid rgb(5, 63, 139) ;
     background: rgba(27, 160, 82, 0.87);
-    height: 40px;
+    height: 41px;
     --van-nav-bar-title-font-size:18px;
     --van-nav-bar-title-text-color:white;
     --van-nav-bar-icon-color:white;

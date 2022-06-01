@@ -1,9 +1,9 @@
 <template >
     <div class="nav" >
         <van-nav-bar class="my-navbar"
-            title="疫苗接种情况"
+            title="购物车"
             left-arrow
-            @click-left="onClickLeft"
+            @click-left="$router.push('/buygoods')"
             fixed
         />  
     </div> 
@@ -12,12 +12,7 @@
 
 <script>
 export default {
-     setup() {
-    const onClickLeft = () => history.back();
-    return {
-      onClickLeft,
-    };
-  },
+     
 }
 </script>
 
@@ -33,9 +28,6 @@ export default {
     --van-nav-bar-title-text-color:white;
     --van-nav-bar-icon-color:white;
     --van-nav-bar-text-color:white;
-    
-    
-
 }
 </style>
 

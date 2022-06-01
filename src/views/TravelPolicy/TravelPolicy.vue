@@ -5,6 +5,8 @@
     <nav-bar-travel/>
     <!-- 插图 -->
     <img src="../../assets/image/travel.png" class="img" alt="">
+    <!-- 宣传语 -->
+    <travel-notice/>
     <div class="warp">
         <!-- 出行防护小贴士 -->
       <div class="title">
@@ -12,7 +14,6 @@
       </div>
 
       <div class="wrap-item">
-        
         <van-tabs v-model="active" 
         sticky
         type="card" 
@@ -29,7 +30,7 @@
             <div class="contentList">
               <div class="content-item" v-for="(it, idx) in item" :key="idx">
                 <div class="title">{{ it.title }}</div>
-                <div class="content">{{ it.content }}</div>
+                <div class="content" style="text-align:justify;">{{ it.content }}</div>
 
               </div>
             </div>
@@ -44,13 +45,12 @@
 
 <script>
 import { contentList } from "./index.js";
-import remFontSize from "../../assets/js/remFontSize";
 import NavBarTravel from "../NavBar/NavBarTravel.vue";
 import TabBarMea from '../TabBar/TabBarMea.vue';
-
+import TravelNotice from '../NoticeBar/TravelNotice.vue'
 
 export default {
-  components: { NavBarTravel, TabBarMea },
+  components: { NavBarTravel, TabBarMea,TravelNotice },
     data() {
     return {
       contentList,         //存储防护贴士信息
@@ -67,7 +67,7 @@ export default {
     };
   },
   created(){
-    this.lineHeight = remFontSize(0.2);
+ 
   },
   
   
@@ -107,7 +107,7 @@ export default {
     margin-bottom: 1.3rem;
     background-color: #ffffff;
     position: relative;
-    box-shadow: 0 5px 5px 5px rgba(102, 102, 102, 0.623);
+    box-shadow: 1px 1px 5px 0px rgba(102, 102, 102, 0.5);
     --van-tabs-card-height:40px;
     .title {
       display: flex;
@@ -127,13 +127,14 @@ export default {
   .content-item {
     margin-bottom: 0.2rem;
     .title {
-      font-size: 0.3rem;
+      font-size: 14px;
       font-weight: bold;
       margin-bottom: -0.35rem;
       margin-top: 0.3rem;
       color: #4d4d4d;
     }
     .content{
+      font-size:14px;
       margin-left: 0.5rem;
       margin-top: 0rem;
     }

@@ -1,14 +1,13 @@
 <template>
     <div class="Measure">
         <!-- 组件1 顶部栏 -->
-        <navbar-mea/>  
+        <navbar-mea/> 
+        <!-- 插图 -->
         <img src="../../assets/image/Mea.png" alt="" class="img" >
         <div class="title" ><h3>疫情防控措施</h3></div>
-        
-        <!-- 组件  卡 片 -->
+        <!-- 组件2  卡 片 -->
         <mea-info/>
-
-        <!-- 组件  底部栏 -->
+        <!-- 组件3  底部栏 -->
         <tab-bar-mea/>
     </div>
 

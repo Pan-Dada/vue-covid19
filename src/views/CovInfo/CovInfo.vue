@@ -3,7 +3,7 @@
     <div class="title" ><h3>信息导览</h3></div>
 <!-- 卡片列表 -->
     <div class="Card">
-      <img class="my-img" src="../../assets/image/card1.png" alt="" @click="$router.push('/regioninfo')">
+      <img class="my-img" src="../../assets/image/card1.png" alt="" @click="$router.push('/newsinfo')">
       <img class="my-img" src="../../assets/image/card2.png" alt="" @click="$router.push('/domesticinfo')">
       <img class="my-img" src="../../assets/image/card3.png" alt="" @click="$router.push('/worldwide')">
       <img class="my-img" src="../../assets/image/card4.png" alt="" @click="$router.push('/measures')">

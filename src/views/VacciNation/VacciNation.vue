@@ -1,7 +1,10 @@
 <template>
 <div class="vaccination">
+    <!-- 顶部栏 -->
     <nav-bar-vaccination/>
+    <!-- 插图 -->
     <img src="../../assets/image/vaccination1.png" class="img" alt="">
+    <vaccination-notice/>
     <div class="title"> 疫情接种情况 </div>
     <!-- 统计版块 -->
     <div class="num">
@@ -9,7 +12,7 @@
         <li>
           <div class="number">
             <span>较昨日</span
-            >{{formatWan(number(VaccineData["全球"].new_vaccinations))}}剂
+            >{{(number(formatWan(VaccineData["全球"].new_vaccinations)))}}剂
           </div>
           <div class="bold">
             {{ formatYi(VaccineData["全球"].total_vaccinations)}}剂
@@ -25,7 +28,7 @@
         <li>
           <div class="number">
             <span>较昨日</span
-            >{{ formatWan(number(VaccineData["中国"].new_vaccinations))}}剂
+            >{{ number(VaccineData["中国"].new_vaccinations)}}剂
           </div>
           <div class="bold">
             {{ formatYi(VaccineData["中国"].total_vaccinations) }}剂
@@ -41,14 +44,11 @@
         </li>
       </ul>
     </div>
-
     <!-- 疫苗图表 -->
-    <vaccination-line/>
-  
+    <vaccination-line/> 
     <!-- 底部栏 -->
     <tab-bar-mea/>
 </div>
-  
 </template>
 
 <script>
@@ -56,10 +56,11 @@ import NavBarVaccination from '../NavBar/NavBarVaccination.vue'
 import api from "../../api/index";
 import TabBarMea from '../TabBar/TabBarMea.vue';
 import VaccinationLine from '../VueEcharts/VaccinationLine.vue';
+import VaccinationNotice from '../NoticeBar/VaccinationNotice.vue';
 
 
 export default {
-  components: { NavBarVaccination, TabBarMea, VaccinationLine},
+  components: { NavBarVaccination, TabBarMea, VaccinationLine, VaccinationNotice},
   data() {
     return {
       VaccineData: {
@@ -95,9 +96,7 @@ export default {
     formatYi: function (val) {
       val = (val / 100000000).toFixed(1);
       return val + "亿";
-    },
-
-      
+    }, 
   },
   created(){
     //请求疫苗信息接口
@@ -108,7 +107,6 @@ export default {
     this.VaccineData = result.data.VaccineTopData;
     this.ChinaVaccineTrendData = result.data.ChinaVaccineTrendData;
     });
-
   }
 
 }

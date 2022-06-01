@@ -13,9 +13,8 @@
           <div>全球</div>
         </van-tabbar-item>
         
-        <van-tabbar-item name="measures" @click="$router.push('/measures')" >
-          <div class="icon"><van-icon name="measures" class="iconfont icon-yiqingguanli" /></div>
-          <div>措施</div>
+        <van-tabbar-item name="measures" icon="orders-o" @click="$router.push('/measures')">
+         措施 
         </van-tabbar-item>
         
     </van-tabbar>

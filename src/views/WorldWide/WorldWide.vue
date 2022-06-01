@@ -80,20 +80,13 @@ export default {
     time(num) {
       var time = new Date(num).toLocaleString("chinese", { hour12: false });
       return time;
-      //手动获取：
-    //   var y = data.getFullYear();
-    //   var m = data.getMonth()+1;
-    //   var d = data.getDate();
-    //   return y+'-'+m+'-'+d;
     },
     //函数3 js 中数字加逗号处理(每三位加逗号)
     division(num) {
       if (num == undefined) return "";
       
-      return num.toLocaleString();
-      
+      return num.toLocaleString();  
     },
-
   },
     created(){
         //请求病毒接口
@@ -127,6 +120,7 @@ export default {
     background: #fff;
     min-height: 2rem;
     border-radius: 0.2rem 0.2rem 0 0;
+	padding-bottom: 20px;
     .title{
        
         padding: 0.1rem;
@@ -144,7 +138,10 @@ export default {
 
     }
   .wrap {
+    width: 92%;
+    margin-left: 4%;
     margin-top: 16px;
+    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     padding-top: 0.2rem;

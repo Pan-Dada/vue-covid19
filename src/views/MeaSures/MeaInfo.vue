@@ -27,7 +27,7 @@ export default {
     
     .Card{
       .my-img{
-        box-shadow: 5px 5px 5px rgb(4, 116, 63, 0.637);//阴影
+        box-shadow: 3px 3px 5px rgb(4, 116, 63, 0.537);//阴影
         display: flex;
         margin-left:1%;
         margin-right: 1%;
@@ -35,7 +35,7 @@ export default {
         margin-top: 2%;
         margin-bottom: 6%;
         border-radius: 15px ;
-        border: 3px solid rgb(4, 116, 63);
+        border: 2px solid rgb(4, 116, 63);
         
       }
     }

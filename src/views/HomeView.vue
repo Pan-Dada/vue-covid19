@@ -1,14 +1,12 @@
 <template>
   <div class="home">
-    <!-- 组件1 navbar导航栏 -->
+    <!-- 组件1 顶部导航栏 -->
     <nav-bar0/>
-
-    <!--组件2 轮播图 -->
+    <!-- 组件2 轮播图 -->
     <swipe-container/>
-    
-    <!--组件3 疫情信息卡片 -->
+    <!-- 组件3 疫情信息卡片 -->
     <cov-info/>
-    
+    <!-- 组4 底部导航栏 -->
     <tab-bar/>
 
     <!-- <domestic-info :covData="covData" /> -->
@@ -17,14 +15,11 @@
 </template>
 
 <script>
+import api from '../api/index'
 import CovInfo from './CovInfo/CovInfo.vue'
 import SwipeContainer from './SwipeContainer/SwipeContainer.vue'
 import NavBar0 from './NavBar/NavBar0.vue'
-
-// @ is an alias to /src
-import api from '../api/index'
 import TabBar from './TabBar/TabBar.vue'
-// import DomesticInfo from './DomesticInfo/DomesticInfo.vue'
 
 export default {
   name: 'HomeView',

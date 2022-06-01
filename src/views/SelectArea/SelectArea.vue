@@ -1,6 +1,5 @@
 <template>
   <div class="SelectArea">
-
     <van-field
       v-model="fieldValue"
       is-link
@@ -19,10 +18,7 @@
         @finish="onFinish"
       />
     </van-popup>
-
-
   </div>
-
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-tabbar v-model="active">
-        <van-tabbar-item name="home" icon="home-o" >首页</van-tabbar-item>
+        <van-tabbar-item name="home" icon="home-o" @click="$router.push('/')">首页</van-tabbar-item>
 
         <van-tabbar-item name="domestic" @click="$router.push('/domesticinfo')">
           <div class="icon" ><van-icon name="domestic" class="iconfont icon-guoneiyou" /></div>
@@ -13,9 +13,8 @@
           <div>全球</div>
         </van-tabbar-item>
         
-        <van-tabbar-item name="measures" @click="$router.push('/measures')">
-          <div class="icon"><van-icon name="measures" class="iconfont icon-yiqingguanli" /></div>
-          <div>措施</div>
+        <van-tabbar-item name="measures" icon="orders-o" @click="$router.push('/measures')">
+         措施 
         </van-tabbar-item>
         
     </van-tabbar>

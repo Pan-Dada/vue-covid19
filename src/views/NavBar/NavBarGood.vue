@@ -3,7 +3,7 @@
         <van-nav-bar class="my-navbar"
             title="防疫物资"
             left-arrow
-            @click-left="onClickLeft"
+            @click-left="$router.push('/measures')"
             fixed
         />  
     </div> 
@@ -12,12 +12,7 @@
 
 <script>
 export default {
-     setup() {
-    const onClickLeft = () => history.back();
-    return {
-      onClickLeft,
-    };
-  },
+     
 }
 </script>
 
@@ -27,13 +22,11 @@ export default {
 }
 .my-navbar{
     
-    border-bottom: 0.7px solid rgb(5, 63, 139) ;
     background: rgba(27, 160, 82, 0.87);
-    height: 40px;
+    height: 41px;
     --van-nav-bar-title-font-size:18px;
     --van-nav-bar-title-text-color:white;
     --van-nav-bar-icon-color:white;
     --van-nav-bar-text-color:white;
 }
 </style>
-

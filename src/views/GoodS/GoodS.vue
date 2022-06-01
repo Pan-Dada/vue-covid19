@@ -1,11 +1,14 @@
 <template>
   <div class="goods">
-
     <div class="warp">
+      <!-- 顶部栏 -->
       <div><nav-bar-good/></div>
+      <!-- 插图 -->
       <div class="top-logo">
         <img src="../../assets/image/measure3.png" class="img" alt="" />
       </div>
+      <!-- 图文介绍 -->
+      <good-notice/>
       <div class="tabs">
         <van-tabs sticky
         type="card" 
@@ -18,20 +21,23 @@
           <img :src="item.img" alt="" class="my-img"/>
         </van-tab>
       </van-tabs></div>
-      
     </div>
+    <!-- 购买按钮 -->
     <div class="foot">
-      <button>抗疫物资购买</button>
+      <button @click="showToast();$router.push('/buygoods')">抗疫物资购买</button>
     </div>
   </div>
 </template>
+
 <script>
 import NavBarGood from '../NavBar/NavBarGood.vue';
+import GoodNotice from '../NoticeBar/GoodNotice.vue';
 
 export default {
-  components: {NavBarGood  },
+  components: {NavBarGood,GoodNotice },
   data() {
-    return {
+ 
+     return {
       tabList: [
         { title: "消毒剂", img: require("@/assets/image/xiaoduji.png") },
         { title: "口罩", img: require("@/assets/image/kouzhao.png") },
@@ -44,6 +50,12 @@ export default {
     goBack() {
       this.$router.go(-1);
     },
+    
+    showToast(){
+       this.$toast.loading('进入商品界面中...');
+       this.$toast.setDefaultOptions({ duration: 500 });
+    }
+  
   },
 };
 </script>
@@ -60,14 +72,14 @@ export default {
   // background-color: rgba(18, 168, 111, 0.644);
   background: white;
 
-  //主体
+  //主体卡片
   .tabs{
     margin-top: 20px;
     width: 88%;
     margin-left: 4%;
     padding: 2% 2% 2%;
     border-radius: 0.3rem;
-    box-shadow: 0 5px 5px 5px rgba(102, 102, 102, 0.623);
+    box-shadow: 1px 1px 3px 1px rgba(102, 102, 102, 0.5);
     margin-block: 0.5rem;
 
   }
@@ -104,14 +116,14 @@ export default {
     
     .van-tabs {
       position: relative;
-      
+      margin-top: 20px;
       
       ::v-deep.van-tabs__line {
         background-color: transparent;
       }
 
        ::v-deep .van-tabs__content {
-         padding: 0 0.32rem;
+         padding: 0.1rem 0.1rem;
          
          
       }
