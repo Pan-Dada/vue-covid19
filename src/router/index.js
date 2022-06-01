@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const routes = [
@@ -8,9 +8,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/regioninfo',
-    name: 'regioninfo',
-    component: () => import('../views/RegionInfo/RegionInfo.vue')
+    path: '/newsinfo',
+    name: 'newsinfo',
+    component: () => import('../views/NewsInfo/NewsInfo.vue')
+  },
+  {
+    path: '/newsexample',
+    name: 'newsexample',
+    component: () => import('../views/NewsInfo/NewsExample.vue')
   },
   {
     path: '/domesticinfo',
@@ -33,6 +38,16 @@ const routes = [
     component: () => import('../views/GoodS/GoodS.vue')
   },
   {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('../views/GoodS/GoodCart.vue')
+  },
+  {
+    path: '/buygoods',
+    name: 'buygoods',
+    component: () => import('../views/GoodS/BuyGoods.vue')
+  },
+  {
     path: '/travelpolicy',
     name: 'travelpolicy',
     component: () => import('../views/TravelPolicy/TravelPolicy.vue')
@@ -51,7 +66,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 
