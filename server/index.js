@@ -8,7 +8,9 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 app.use(bodyParser.json());
+// app.use(bodyParser.json({ "limit":"10000kb"}));
 app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.urlencoded({ "limit":"10000kb"})); 
 
 // 后端api路由
 app.use('/api/user', userApi);
