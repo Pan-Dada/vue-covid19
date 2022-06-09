@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="register">
     <van-form @submit="onSubmit">
-      <div class="title" style="font-size: 50px;margin-bottom:30px;margin-top:30px;" >注册</div>
-      <div class="sub-title" style="font-size: 15px;margin-bottom:30px">
+      <div class="title" style="font-size: 60px;margin-bottom:30px;" >注册</div>
+      <div class="sub-title" style="font-size: 16px;margin-bottom:30px">
         注册账号来使用各种提供的服务
       </div>
       <van-cell-group inset>
@@ -13,6 +13,7 @@
           placeholder="账号"
           :rules="[{ required: true, message: '请填写账号' }]"
         />
+
         <van-field
           v-model="pwd"
           type="password"
@@ -21,6 +22,15 @@
           placeholder="密码"
           :rules="[{ required: true, message: '请填写密码' }]"
         />
+
+        <van-field
+          v-model="name"
+          name="昵称"
+          label="昵称"
+          placeholder="昵称"
+          :rules="[{ required: true, message: '请填写昵称' }]"
+        />
+        
         <van-field
           v-model="tel"
           name="手机号"
@@ -47,10 +57,23 @@
           size="normal"
           @click="register();"
           block
-          color="#1E3A8A"
-          style="margin-bottom:20px"
+          color="#1E88E5"
+          style="margin-bottom:12px"
         >
             注册
+        </van-button>
+
+
+         <van-button
+          type="primary"
+          native-type="submit"
+          size="normal"
+          @click="$router.push('/')"
+          block
+          color="#1E88E5"
+          style="margin-bottom:12px"
+        >
+            返回登录
         </van-button>
         
         
@@ -69,6 +92,7 @@ name: "RegisterIndex",
   props: {},
   data() {
     const id = ref("");
+    const name = ref("");
     const pwd = ref("");
     const tel = ref("");
     const address = ref("");
@@ -76,7 +100,7 @@ name: "RegisterIndex",
     const onSubmit = (values) => {
       console.log("submit", values);
     };
-    return { id, pwd,tel,address, onSubmit };
+    return { id,name, pwd,tel,address, onSubmit };
   },
   computed: {},
   watch: {},
@@ -86,12 +110,13 @@ name: "RegisterIndex",
     
     register() {
       console.log("点击了注册按钮");
-        if(this.pwd!=''&&this.id!=''&&this.tel!=''&&this.address!=''&&this.tel.length==11){
+        if(this.name!=''&&this.pwd!=''&&this.id!=''&&this.tel!=''&&this.address!=''&&this.tel.length==11){
             axios({
                 method: "post",
                 url: "/api/api/user/addUser",
                 data: {
-                    username:this.id,
+                    userid:this.id,
+                    username:this.name,
                     password:this.pwd,
                     tel:this.tel,
                     address:this.address
@@ -111,5 +136,9 @@ name: "RegisterIndex",
 </script>
 
 <style>
-
+.register{
+  background: #2CADF8;
+  padding-top: 1.2rem;
+  padding-bottom: 6.2rem;
+}
 </style>
